@@ -1,0 +1,13 @@
+<% @books.each do |b| %>
+<div>
+	<div><%= b.title %></div>
+	<div><%= b.page %></div>
+	<div><%= b.status %></div>
+	<div><%= b.description %></div>
+	<div><%= link_to "Show Book", book_path(b) %> <%= link_to "edit Book", edit_book_path(b) %> <%= link_to "delete Book", book_path(b), method: :delete %> <%= link_to "non-aktif", toggle_book_path(b), method: :patch %></div>
+	<hr>
+</div>
+<%end%>
+
+<%= link_to "New Book", new_book_path %>
+<%= link_to "Active Book", active_books_path %>
